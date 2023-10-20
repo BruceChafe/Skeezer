@@ -1,0 +1,178 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #282828;
+    min-height: 100vh;
+
+    menu bar: #181818;
+    top gradient: #404040;
+    color: #FFFFFF;
+    second color: #B3B3B3;
+    
+}
+
+/* Navbar content */
+.navbar {
+    background-color: #404040;
+}
+
+.nav-link {
+    color: #B3B3B3;
+}
+
+.nav-link:hover {
+    color: #B3B3B3;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+}
+
+.newJob {
+    margin: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    background-color: #404040;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-left {
+    font-size: 22px;
+}
+
+.top-right {
+    font-size: 18px;
+}
+
+.name {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.phone-content {
+    background-color: #3D4582;
+    padding: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#phone-number {
+    font-size: 24px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#phone-image {
+    width: 30px;
+}
+
+.show-more {
+    margin-top: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.button {
+    padding: 10px;
+}
+
+#acceptJob {
+    width: 40%;
+    background-color: #458283;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+#rejectJob {
+    width: 40%;
+    background-color: #823D45;
+    color: white;    
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+footer {
+    background-color: #404040;
+    color: #B3B3B3;
+    text-align: center;
+}
+
+/* Active Job */
+.activeJob {
+    margin: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    background-color: #404040;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+}
+
+.phone-content-activeJob{ 
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#phone-number-activeJob {
+    font-size: 20px;
+    background-color: #3D4582;
+    padding: 12px;
+    color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.startLocation {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.endLocation {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+#jobStatus {
+    width: 100%;
+    padding: 15px;
+    background-color: #823D45;
+    color: white;    
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    text-align: center;
+}
