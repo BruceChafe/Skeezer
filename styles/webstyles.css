@@ -1,0 +1,102 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #2b212c;
+  color: #FFFFFF;
+  font-family: 'DM Sans', sans-serif;
+
+
+color-surface-mixed-100: #2b212c;
+color-surface-mixed-200: #3f3640;
+color-surface-mixed-300: #554c55;
+color-surface-mixed-400: #6b636b;
+color-surface-mixed-500: #827b82;
+color-surface-mixed-600: #9a949a;
+}
+ 
+main {
+  display: flex;
+  flex-wrap: nowrap;
+  /* max-height: 100vh; */
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.navbar {
+  background-color: #9a949a;
+  height: 5vh;
+  border-bottom: thin;
+  border-bottom-style: solid;
+  border-right-color: 404040;
+}
+
+.nav-link {
+  color: #B3B3B3;
+}
+
+.nav-link:hover {
+  color: #B3B3B3;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: calc(100vh - 20px);
+  width: 13%;
+  background-color: #554c55;
+  border-radius: 15px;
+  margin: 10px;
+  z-index: 1; /* To ensure it's above other content */
+  overflow-y: auto; /* Enable scrolling if the content is taller than the viewport */
+}
+
+
+.b-example-divider { 
+  flex-shrink: 0;
+  /* height: 95vh; */
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.bi {
+  vertical-align: -.125em;
+  pointer-events: none;
+  fill: currentColor;
+}
+
+.dropdown-toggle { outline: 0; }
+
+.content {
+  margin-left: 13%;
+  background-color: # 404040;
+  width: 100%; 
+}
+
+.title {
+  padding: 20px;
+  padding-left: 35px;
+  position: fixed;
+  margin-bottom: 50px;
+  width: 100%;
+  background-color: #2b212c;
+}
+
+
+.clientIdentity {
+  background-color: #3f3640;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+
+hr
+{
+border-style: solid;
+border-color: #9a949a;
+width: 90%;
+}

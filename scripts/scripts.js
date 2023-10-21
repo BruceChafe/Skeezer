@@ -172,7 +172,7 @@ function activeJob() {
             <div class="phone-content-activeJob">
                 <a href="tel:${phoneNumber}" id="phoneNumber">Call</a>
             </div>
-            <div class="startLocation">${dealershipAddress}</div>
+            <div class="startLocation"><a href="http://maps.google.com/?q=Capital+Hyundai+515+Kenmount+Rd+A1B+4G1+Newfoundland+and+Labrador+St.+John%E2%80%99s">${dealershipAddress}</a></div>
             <div class="endLocation">${address}</div>
             <div id="jobStatus">Client Boarded</div>
         </div>
