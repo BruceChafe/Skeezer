@@ -1,41 +1,27 @@
+:root {
+  --color-surface-mixed-100: #494d49;
+  --color-surface-mixed-200: #5b5f5b;
+  --color-surface-mixed-300: #6e716e;
+  --color-surface-mixed-400: #818481;
+  --color-surface-mixed-500: #959795;
+  --color-surface-mixed-600: #a9aba9;
+  --color-primary-500: #a4cfa4;
+  --color-primary-600: #d6ead6;
+}
+
 body {
   display: flex;
   flex-direction: column;
-  background-color: #2b212c;
+  background-color: var(--color-surface-mixed-100);;
   color: #FFFFFF;
   font-family: 'DM Sans', sans-serif;
-
-
-color-surface-mixed-100: #2b212c;
-color-surface-mixed-200: #3f3640;
-color-surface-mixed-300: #554c55;
-color-surface-mixed-400: #6b636b;
-color-surface-mixed-500: #827b82;
-color-surface-mixed-600: #9a949a;
 }
  
 main {
   display: flex;
   flex-wrap: nowrap;
-  /* max-height: 100vh; */
   overflow-x: auto;
   overflow-y: hidden;
-}
-
-.navbar {
-  background-color: #9a949a;
-  height: 5vh;
-  border-bottom: thin;
-  border-bottom-style: solid;
-  border-right-color: 404040;
-}
-
-.nav-link {
-  color: #B3B3B3;
-}
-
-.nav-link:hover {
-  color: #B3B3B3;
 }
 
 .sidebar {
@@ -44,17 +30,15 @@ main {
   left: 0;
   height: calc(100vh - 20px);
   width: 13%;
-  background-color: #554c55;
+  background-color: var(--color-surface-mixed-300);
   border-radius: 15px;
   margin: 10px;
   z-index: 1; /* To ensure it's above other content */
   overflow-y: auto; /* Enable scrolling if the content is taller than the viewport */
 }
 
-
 .b-example-divider { 
   flex-shrink: 0;
-  /* height: 95vh; */
   background-color: rgba(0, 0, 0, .1);
   border: solid rgba(0, 0, 0, .15);
   border-width: 1px 0;
@@ -80,23 +64,39 @@ main {
   padding-left: 35px;
   position: fixed;
   margin-bottom: 50px;
+  margin-left: 15px;
   width: 100%;
-  background-color: #2b212c;
+  background-color: var(--color-surface-mixed-100);
+  z-index: 1; /* To ensure it's above other content */
 }
 
+.dataEntry {
+  background-color: var(--color-surface-mixed-600);
+  border-radius: 50px;
+  border: 0px;
+  padding: 8px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+#lastName:valid {
+  background-color: var(--color-primary-600);
+}
 
 .clientIdentity {
-  background-color: #3f3640;
+  background-color: var(--color-surface-mixed-200);
   margin-left: 50px;
   margin-right: 50px;
   padding: 15px;
   border-radius: 15px;
 }
 
-
-hr
-{
+hr {
 border-style: solid;
 border-color: #9a949a;
 width: 90%;
+}
+
+.btn-main {
+  background-color: var(--color-primary-500);
 }
