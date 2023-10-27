@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skeezer</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Include Bootstrap JS (Popper.js and Bootstrap JS) and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Include custom CSS and JavaScript files -->
+  <link rel="stylesheet" href="../styles/webstyles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
+  <script src="../scripts/scripts.js"></script>
+  <script src="../scripts/localStorage.js"></script>
+</head>
+<body>
+
+<!-- Main -->
+<div class="d-flex flex-column flex-shrink-0 p-3 sidebar" style="width: 13%">
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li><a class="nav-link text-white"><b>Skeezer</b></a></li>
+    <hr/>
+    <li><a href="/website/chat.html" class="nav-link" aria-current="page" id="sideBarChat">Chat</a></li>
+    <li><a href="#" class="nav-link text-white">Appointments</a></li>
+    <li><a href="#" class="nav-link text-white">Customer Shuttle</a></li>
+    <li><a href="#" class="nav-link text-white">Service Videos</a></li>
+    <li><a href="#" class="nav-link text-white">Payments</a></li>
+    <li><a href="/website/contacts.html" class="nav-link text-white">Contacts</a></li>
+  </ul>
+  <div class="dropdown">
+    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+      <strong>$CurrentUser</strong>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+      <li><a class="dropdown-item" href="#">New project...</a></li>
+      <li><a class="dropdown-item" href="#">Settings</a></li>
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">Sign out</a></li>
+    </ul>
+  </div>
+</div>
+<main>
+  <div class="b-example-divider"></div>
+  <div class="content">
+    <div class="titleBar">
+      <div class="title">
+        <p><a href="/website/chat.html">Chat</a></p>
+        <h4><b>Chat</b></h4>
+      </div>
+    </div>
+    <div class="clientIdentity customerChat" style="margin-top: 115px;">
+      <div class="row">
+        <div class="col-md-3 col-border">
+          <h5>Customers</h5>
+          <div id="customerChatTable"></div>
+        </div>
+        <div class="col-md-9 customerChat">
+          <div id="selectedCustomerChat"></div>
+          <div class="customerChat-head" id="customerChat-head"><h5></h5></div>
+          <div class="customerChat-body" id="customerChat-body"><h5></h5></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>

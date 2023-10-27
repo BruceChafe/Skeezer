@@ -1,245 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Skeezer</title>
-    <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Include Bootstrap JS (Popper.js and Bootstrap JS) and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Include custom CSS and JavaScript files -->
-    <link rel="stylesheet" href="../styles/webstyles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
-    <script src="../scripts/scripts.js"></script>
-    <script src="../scripts/localStorage.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skeezer</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Include Bootstrap JS (Popper.js and Bootstrap JS) and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Include custom CSS and JavaScript files -->
+  <link rel="stylesheet" href="../styles/webstyles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
+  <script src="../scripts/scripts.js"></script>
+  <script src="../scripts/localStorage.js"></script>
 </head>
 <body>
 
 <!-- Main -->
-<main>
-  <div class="d-flex flex-column flex-shrink-0 p-3 sidebar" style="width: 13%">  
-    <ul class="nav nav-pills flex-column mb-auto">
-      
-      <li>
-        <a class="nav-link text-white bold">Skeezer</a>
-      </li>
-      <hr/>
-      <li>
-        <a href="#" class="nav-link text-white">Home</a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">Dashboard</a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">Orders</a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">Products</a>
-      </li>
-      <li>
-        <a href="#" class="nav-link" aria-current="page">Customers</a>
-      </li>
+<div class="d-flex flex-column flex-shrink-0 p-3 sidebar" style="width: 13%">
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li><a class="nav-link text-white"><b>Skeezer</b></a></li>
+    <hr/>
+    <li><a href="/website/chat.html" class="nav-link text-white">Chat</a></li>
+    <li><a href="#" class="nav-link text-white">Appointments</a></li>
+    <li><a href="#" class="nav-link text-white">Customer Shuttle</a></li>
+    <li><a href="#" class="nav-link text-white">Service Videos</a></li>
+    <li><a href="#" class="nav-link text-white">Payments</a></li>
+    <li><a href="/website/contacts.html" class="nav-link" aria-current="page" id="sideBarContacts">Contacts</a></li>
+  </ul>
+  <div class="dropdown">
+    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+      <strong>$CurrentUser</strong>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+      <li><a class="dropdown-item" href="#">New project...</a></li>
+      <li><a class="dropdown-item" href="#">Settings</a></li>
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">Sign out</a></li>
     </ul>
-    <div class="dropdown">
-      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-        <strong>$CurrentUser</strong>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-        <li><a class="dropdown-item" href="#">New project...</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
-      </ul>
-    </div>
   </div>
+</div>
+<main>
   <div class="b-example-divider"></div>
   <div class="content">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="title">
-          <p>Contacts</p>
-          <h4><b>New Contact</b></h4>
-          <hr style="width:100%">
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="title">
-          <button class="btn btn-main">Save</button>
-        </div>
+    <form id="newContactForm">
+    <div class="titleBar">
+      <div class="title">
+        <p><a href="/website/contacts.html">Chat</a></p>
+        <h4><b>New Contact</b></h4>
       </div>
     </div>
-    <form>
-      <div class="clientIdentity" style="margin-top: 9%">
+      <div class="clientIdentity" style="margin-top: 115px;">
         <div class="row">
           <div class="col">
-              <label for="firstName">First Name <span style="color: red;">*</span></label><br>
-              <input type="text" class="dataEntry" id="firstName" name="firstName" required>
+            <label for="firstName">First Name <span style="color: red;">*</span></label><br>
+            <input type="text" class="dataEntry" id="firstName" name="firstName" required>
           </div>
           <div class="col">
-              <label for="middleName">Middle Name (Optional)</label><br>
-              <input type="text" class="dataEntry" id="middleName" name="middleName">
+            <label for="middleName">Middle Name (Optional)</label><br>
+            <input type="text" class="dataEntry" id="middleName" name="middleName">
           </div>
           <div class="col">
-              <label for="lastName">Last Name <span style="color: red;">*</span></label><br>
-              <input type="text" class="dataEntry" id="lastName" name="lastName" required>
+            <label for="lastName">Last Name <span style="color: red;">*</span></label><br>
+            <input type="text" class="dataEntry" id="lastName" name="lastName" required>
           </div>
           <div class="col"></div>
-      </div>
-      <br> <!-- Add a line break -->
-      <div class="row">
-
-        <div class="col">
-          <label for="preferredContact">Is a company.</label>
+        </div>
+        <br>
+        <!-- Add a line break -->
+        <div class="row">
+          <div class="col">
+            <label for="preferredContact">Is a company.</label>
             <div class="row">
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="contactPhone" name="preferredContact" value="Phone">
-              <label class="form-check-label" for="contactPhone">Yes</label>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" id="isCompany" name="preferredContact" value="Phone">
+                <label class="form-check-label" for="isCompany">Yes</label>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col">
-          <label for="companyName">Company Name</label><br>              
-          <input type="text" class="dataEntry" id="companyName" name="companyName">
-      </div>
-        <div class="col"></div>
-        <div class="col"></div>
-        </div>
-          <br> <!-- Add a line break -->
-          <div class="row">
-            <div class="col">              
-              <label for="gender">Gender</label><br>
-              <select id="gender" name="gender" class="dataEntry">
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="other">Other</option>
-                  <option value="preferNotToSay">Prefer Not To Say</option>
-              </select>
-            </div>
-            <div class="col"> 
-              <label for="dob">Date of Birth</label><br>
-              <input type="date" class="dataEntry" id="dob" name="dob">
+          <div class="col">
+            <label for="companyName">Company Name</label><br>
+            <input type="text" class="dataEntry" id="companyName" name="companyName">
           </div>
           <div class="col"></div>
           <div class="col"></div>
         </div>
-      </div>
-
-      <div class="clientIdentity" style="margin-top: 50px">
+        <br>
+        <!-- Add a line break -->
         <div class="row">
-        <div class="col">
+          <div class="col">
+            <label for="gender">Gender</label><br>
+            <select id="gender" name="gender" class="dataEntry">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+              <option value="preferNotToSay">Prefer Not To Say</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="dob">Date of Birth</label><br>
+            <input type="date" class="dataEntry" id="dob" name="dob">
+          </div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+      </div>
+      <div class="clientIdentity">
+        <div class="row">
+          <div class="col">
             <label for="preferredLanguage">Preferred Language</label>
-           <div class="row"> 
-            <div class="form-check">
-                <input type="radio" class="form-check-input" id="languageFrench" name="preferredLanguage" value="French">
-                <label class="form-check-label" for="languageFrench">French</label>
-            </div>
-            <div class="form-check">
+            <div class="row">
+              <div class="form-check">
                 <input type="radio" class="form-check-input" id="languageEnglish" name="preferredLanguage" value="English">
                 <label class="form-check-label" for="languageEnglish">English</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" id="languageFrench" name="preferredLanguage" value="French">
+                <label class="form-check-label" for="languageFrench">French</label>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col">
+          <div class="col">
             <label for="preferredContact">Preferred Contact Type</label>
             <div class="row">
-            <div class="form-check">
+              <div class="form-check">
                 <input type="radio" class="form-check-input" id="contactPhone" name="preferredContact" value="Phone">
                 <label class="form-check-label" for="contactPhone">Phone</label>
-            </div>
-            <div class="form-check">
+              </div>
+              <div class="form-check">
                 <input type="radio" class="form-check-input" id="contactSMS" name="preferredContact" value="SMS">
                 <label class="form-check-label" for="contactSMS">SMS</label>
-            </div>
-            <div class="form-check">
+              </div>
+              <div class="form-check">
                 <input type="radio" class="form-check-input" id="contactEmail" name="preferredContact" value="Email">
                 <label class="form-check-label" for="contactEmail">Email</label>
+              </div>
             </div>
           </div>
         </div>
-    </div>
-
-    <br>
-
-    
+        <br>
         <div class="col">
-            <label for="phone">Phone</label><br>
-            <input type="text" class="dataEntry" id="phone" name="phone" style="width: 75%">
+          <label for="phonePhoneNumber">Phone</label><br>
+          <input type="text" class="dataEntry" id="phonePhoneNumber" name="phonePhoneNumber" style="width: 75%">
         </div>
+        <br>
         <div class="col">
-            <label for="mobile">Mobile</label><br>
-            <input type="text" class="dataEntry" id="mobile" name="mobile" style="width: 75%">
+          <label for="mobilePhoneNumber">Mobile</label><br>
+          <input type="text" class="dataEntry" id="mobilePhoneNumber" name="mobilePhoneNumber" style="width: 75%">
         </div>
+        <br>
         <div class="col">
-            <label for="businessPhone">Business </label><br>
-            <input type="text" class="dataEntry" id="businessPhone" name="businessPhone" style="width: 75%">
+          <label for="businessPhoneNumber">Business </label><br>
+          <input type="text" class="dataEntry" id="businessPhoneNumber" name="businessPhoneNumber" style="width: 75%">
         </div>
-    
-
-    <br>
-
-    
+        <br>
         <div class="col">
-            <label for="email1">Email 1</label><br>
-            <input type="email" class="dataEntry" id="email1" name="email1" style="width: 75%">
+          <label for="email1">Email 1</label><br>
+          <input type="email" class="dataEntry" id="email1" name="email1" style="width: 75%">
         </div>
+        <br>
         <div class="col">
-            <label for="email2">Email 2</label><br>
-            <input type="email" class="dataEntry" id="email2" name="email2" style="width: 75%">
+          <label for="email2">Email 2</label><br>
+          <input type="email" class="dataEntry" id="email2" name="email2" style="width: 75%">
         </div>
-    
-
-    <br>
-
-    
-        <div class="col">
-            <label for="notes">Notes</label>
-            <textarea class="form-control" id="notes" name="notes" rows="4" style="background-color:#d6ead6"  style="width:75%"></textarea>
-        </div>
-    
-</div>
-
-
-
-      <div class="clientIdentity" style="margin-top: 50px">
+      </div>
+      <div class="clientIdentity" style="margin-bottom: 75px;">
         <div class="row">
           <div class="col">
-              <label for="address">Address</label><br>
-              <input type="text" class="dataEntry" id="address" name="address">
+            <label for="streetAddress">Street Address</label><br>
+            <input type="text" class="dataEntry" id="streetAddress" name="streetAddress">
           </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <label for="postalCode">Postal Code</label><br>
+            <input type="text" class="dataEntry" id="postalCode" name="postalCode">
+          </div>
+          <div class="col">
+            <label for="city">City</label><br>
+            <input type="text" class="dataEntry" id="city" name="city">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <label for="province">Province</label><br>
+            <input type="text" class="dataEntry" id="province" name="province">
+          </div>
+          <div class="col">
+            <label for="country">Country</label><br>
+            <input type="text" class="dataEntry" id="country" name="country">
+          </div>
+        </div>
       </div>
-      
-      <br>
-      
-      <div class="row">
-          <div class="col">
-              <label for="postalCode">Postal Code</label><br>
-              <input type="text" class="dataEntry" id="postalCode" name="postalCode">
-          </div>
-          <div class="col">
-              <label for="city">City</label><br>
-              <input type="text" class="dataEntry" id="city" name="city">
-          </div>
-      </div>
-      
-      <br>
-      
-      <div class="row">
-          <div class="col">
-              <label for="province">Province</label><br>
-              <input type="text" class="dataEntry" id="province" name="province">
-          </div>
-          <div class="col">
-              <label for="country">Country</label><br>
-              <input type="text" class="dataEntry" id="country" name="country">
-          </div>
-      </div>
-      
+    <div class="saveBar">
+      <div class="saveButton"><button class="btn btn-main" type="submit" value="Save">Save Contact</button></div>
+    </div>
   </form>
-  
   </div>
 </main>
-  </body>
+</body>
 </html>
