@@ -2,13 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #282828;
-    min-height: 100vh;
-
-    menu bar: #181818;
-    top gradient: #404040;
-    color: #FFFFFF;
-    second color: #B3B3B3;
-    
+    min-height: 100vh;  
 }
 
 /* Navbar content */
