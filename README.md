@@ -1,2 +1,0 @@
-# Skeezer
- Skeezer Booking
