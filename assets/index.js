@@ -36,7 +36,7 @@ function sendMessages(form) {
 
   clearForm(form);
 
-  fetch("send-message", {
+  fetch("/send-message", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
