@@ -36,12 +36,12 @@ function sendMessages(form) {
 
   clearForm(form);
 
-  fetch('/functions/send-messages.js', {
-    method: 'GET',
+  fetch("http://127.0.0.1:5500/skeezer-chat/send-message.js", {
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    // body: JSON.stringify(data),
+    body: JSON.stringify(data),
   })
     .then((resp) => {
       if (resp.ok) {
