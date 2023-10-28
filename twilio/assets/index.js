@@ -37,7 +37,7 @@ function sendMessages(form) {
 
   clearForm(form);
 
-  fetch('skeezer/twilio/functions/send-messages.js', {
+  fetch('/skeezer/twilio/functions/send-messages.js', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
