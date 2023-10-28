@@ -36,7 +36,7 @@ function sendMessages(form) {
 
   clearForm(form);
 
-  fetch("/send-message", {
+  fetch("https://brucechafe.github.io/skeezer/skeezer-chat/send-message.js", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
