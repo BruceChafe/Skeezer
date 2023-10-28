@@ -36,12 +36,12 @@ function sendMessages(form) {
 
   clearForm(form);
 
-  fetch('send-messages', {
-    method: 'POST',
+  fetch('/functions/send-messages.js', {
+    method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(data),
+    // body: JSON.stringify(data),
   })
     .then((resp) => {
       if (resp.ok) {
