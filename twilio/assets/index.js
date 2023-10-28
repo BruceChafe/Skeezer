@@ -23,7 +23,6 @@ recipientForm.addEventListener('submit', (evt) => {
 
   if (newRecipientInput.value) {
     addRecipient(newRecipientInput.value);
-    console.log(newRecipientInput.value);
     newRecipientInput.value = '';
   }
 });
@@ -37,14 +36,13 @@ function sendMessages(form) {
 
   clearForm(form);
 
-  fetch('/skeezer/twilio/functions/send-messages.js', {
+  fetch('send-messages', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),
   })
-  
     .then((resp) => {
       if (resp.ok) {
         return resp.json();
