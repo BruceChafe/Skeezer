@@ -50,11 +50,13 @@ document.addEventListener('click', function (event) {
         event.preventDefault();
         console.log('Clicked');
         renderCustomerChatSummary();
+        sendSMS();
     }
 
     if (event.target.id === 'chat-entry') {
         event.preventDefault();
         console.log('chatEntryClicked');
+        sendSMS();
     }
 })
 
@@ -332,3 +334,23 @@ function fetchChatData(chatid) {
     customerChatHead.innerHTML += customerChatHeadData;
     customerChatbody.innerHTML += customerChatBodyData;
 }
+
+function sendSMS() {
+    console.log('hehe');
+    const accountSid = 'AC8241409e4161387061d96975cbd2ac56';
+    const authToken = 'f6223fe68f9a0cb04aa49809fd61ffe6';
+  
+    const client = require('twilio')(accountSid, authToken);
+  
+    client.messages.create({
+      body: 'Your message here',
+      from: '+12056714163',
+      to: '+17097706182',
+    })
+    .then(message => console.log(message.sid))
+    .catch(error => console.error(error));
+  };
+  
+  // Call the function to send the SMS
+  
+  
