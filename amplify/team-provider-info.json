@@ -1,0 +1,29 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-skeezer-dev-151825-authRole",
+      "UnauthRoleArn": "arn:aws:iam::604275015049:role/amplify-skeezer-dev-151825-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::604275015049:role/amplify-skeezer-dev-151825-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-skeezer-dev-151825-deployment",
+      "UnauthRoleName": "amplify-skeezer-dev-151825-unauthRole",
+      "StackName": "amplify-skeezer-dev-151825",
+      "StackId": "arn:aws:cloudformation:us-east-2:604275015049:stack/amplify-skeezer-dev-151825/5d5048c0-7683-11ee-95d8-06b3176247a3",
+      "AmplifyAppId": "d1vgdmlkq09jp0"
+    },
+    "categories": {
+      "function": {
+        "skeezer": {
+          "deploymentBucketName": "amplify-skeezer-dev-151825-deployment",
+          "s3Key": "amplify-builds/skeezer-65796d6832743639376a-build.zip"
+        }
+      },
+      "api": {
+        "skeezer": {}
+      },
+      "auth": {
+        "skeezer": {}
+      }
+    }
+  }
+}
