@@ -1,4 +1,3 @@
-// eslint-disable-next-line consistent-return
 exports.handler = function (context, event, callback) {
   const phoneNumbers = event.recipients.split(',').map((x) => x.trim());
   const { message, passcode } = event;
