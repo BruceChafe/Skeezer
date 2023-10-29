@@ -36,36 +36,38 @@ function sendMessages(form) {
 
   clearForm(form);
 
-  fetch("/skeezer-chat/send-message.js", {
+  fetch("/path-to/send-message.js", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),
   })
-    .then((resp) => {
-      if (resp.ok) {
-        return resp.json();
-      }
-
-      if (resp.status === 401) {
-        throw new Error('Invalid Passcode');
-      } else {
-        throw new Error(
-          'Unexpected error. Please check the logs for what went wrong.'
-        );
-      }
-    })
-    .then((body) => {
-      const successCount = body.result.reduce((currentCount, resultItem) => {
-        return resultItem.success ? currentCount + 1 : currentCount;
-      }, 0);
-
-      resultSection.innerText = `Sent ${successCount} of ${body.result.length} messages. Check logs for details`;
-    })
-    .catch((err) => {
-      resultSection.innerText = err.message;
-    });
+  .then((resp) => {
+    if (resp.ok) {
+      return resp.text(); // Handle the response as text
+    }
+  
+    if (resp.status === 401) {
+      throw new Error('Invalid Passcode');
+    } else {
+      throw new Error(
+        'Unexpected error. Please check the logs for what went wrong.'
+      );
+    }
+  })
+  .then((responseText) => {
+    try {
+      const responseObject = JSON.parse(responseText); // Parse the response as JSON
+      // Handle the responseObject here
+    } catch (error) {
+      resultSection.innerText = 'Invalid JSON response from the server';
+    }
+  })
+  .catch((err) => {
+    resultSection.innerText = err.message;
+  });
+  
 }
 
 sendNotificationForm.addEventListener('submit', (evt) => {
