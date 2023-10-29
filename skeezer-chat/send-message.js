@@ -1,12 +1,12 @@
-const sendMessages = function (context, event) {
+exports.handler = function (context, event, callback) {
   const phoneNumbers = event.recipients.split(',').map((x) => x.trim());
   const { message, passcode } = event;
 
   if (passcode !== context.PASSCODE) {
     const response = new Twilio.Response();
     response.setStatusCode(401);
-    response.setBody('Invalid passcode');
-    return response;
+    response.setBody(JSON.stringify({ error: 'Invalid passcode' })); // Convert to JSON
+    return callback(null, response);
   }
 
   const client = context.getTwilioClient();
@@ -25,12 +25,17 @@ const sendMessages = function (context, event) {
       });
   });
 
-  return Promise.all(allMessageRequests)
+  Promise.all(allMessageRequests)
     .then((result) => {
-      return { result };
+      const response = new Twilio.Response();
+      response.setBody(JSON.stringify({ result })); // Convert to JSON
+      return callback(null, response);
     })
     .catch((err) => {
       console.error(err);
-      return { error: 'Failed to fetch messages' };
+      const response = new Twilio.Response();
+      response.setStatusCode(500); // Internal server error
+      response.setBody(JSON.stringify({ error: 'Failed to fetch messages' })); // Convert to JSON
+      return callback(null, response);
     });
 };
