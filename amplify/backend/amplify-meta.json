@@ -1,0 +1,112 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-skeezer-dev-151825-authRole",
+      "UnauthRoleArn": "arn:aws:iam::604275015049:role/amplify-skeezer-dev-151825-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::604275015049:role/amplify-skeezer-dev-151825-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-skeezer-dev-151825-deployment",
+      "UnauthRoleName": "amplify-skeezer-dev-151825-unauthRole",
+      "StackName": "amplify-skeezer-dev-151825",
+      "StackId": "arn:aws:cloudformation:us-east-2:604275015049:stack/amplify-skeezer-dev-151825/5d5048c0-7683-11ee-95d8-06b3176247a3",
+      "AmplifyAppId": "d1vgdmlkq09jp0"
+    }
+  },
+  "api": {
+    "skeezer": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "skeezer"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway",
+      "output": {
+        "ApiName": "skeezer",
+        "RootUrl": "https://cdlrqtfqca.execute-api.us-east-2.amazonaws.com/dev",
+        "ApiId": "cdlrqtfqca"
+      },
+      "lastPushTimeStamp": "2023-10-29T18:14:54.216Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-skeezer-dev-151825-deployment/amplify-cfn-templates/api/skeezer-cloudformation-template.json",
+        "logicalId": "apiskeezer"
+      }
+    }
+  },
+  "function": {
+    "skeezer": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::604275015049:role/skeezerLambdaRole246dc8d9-dev",
+        "Region": "us-east-2",
+        "Arn": "arn:aws:lambda:us-east-2:604275015049:function:skeezer-dev",
+        "Name": "skeezer-dev",
+        "LambdaExecutionRole": "skeezerLambdaRole246dc8d9-dev"
+      },
+      "lastPushTimeStamp": "2023-10-29T18:14:54.218Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-skeezer-dev-151825-deployment/amplify-cfn-templates/function/skeezer-cloudformation-template.json",
+        "logicalId": "functionskeezer"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-skeezer-dev-151825-deployment",
+        "s3Key": "amplify-builds/skeezer-65796d6832743639376a-build.zip"
+      }
+    }
+  },
+  "auth": {
+    "skeezer": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS",
+            "REQUIRES_UPPERCASE"
+          ]
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-skeezer-dev-151825-deployment/amplify-cfn-templates/auth/skeezer-cloudformation-template.json",
+        "logicalId": "authskeezer"
+      },
+      "lastPushTimeStamp": "2023-10-29T18:14:54.219Z",
+      "output": {
+        "UserPoolId": "us-east-2_wF9DJbi8M",
+        "AppClientIDWeb": "vt1hic47g0f0hnj0s09fco0pn",
+        "AppClientID": "6o0kbljf8391el1gn576rrdjk0",
+        "IdentityPoolId": "us-east-2:4a7c93ce-7254-4aeb-981c-847c0da4f182",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-2:604275015049:userpool/us-east-2_wF9DJbi8M",
+        "IdentityPoolName": "testAuthIdentityPool__dev",
+        "UserPoolName": "skeezer"
+      },
+      "lastPushDirHash": "MPYrhfYykV8qfC45YJS9S/jFg08="
+    }
+  }
+}

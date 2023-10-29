@@ -50,6 +50,7 @@ document.addEventListener('click', function (event) {
         event.preventDefault();
         console.log('Clicked');
         renderCustomerChatSummary();
+        sendSMS();
     }
 
     if (event.target.id === 'chat-entry') {
@@ -333,3 +334,11 @@ function fetchChatData(chatid) {
     customerChatbody.innerHTML += customerChatBodyData;
 }  
   
+function sendSMS() {
+    const axios = require('axios');
+    axios.post('/send-sms').then((response) => {
+      console.log('SMS sent:', response.data);
+    }).catch((error) => {
+      console.error('Error sending SMS:', error);
+    });
+  }
