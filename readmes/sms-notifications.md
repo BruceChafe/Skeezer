@@ -30,7 +30,7 @@ In your `.env` file, set the following values:
 1. Install the [Twilio CLI](https://www.twilio.com/docs/twilio-cli/quickstart#install-twilio-cli)
 2. Install the [serverless toolkit](https://www.twilio.com/docs/labs/serverless-toolkit/getting-started)
 
-```shell
+```she
 twilio plugins:install @twilio-labs/plugin-serverless
 ```
 
