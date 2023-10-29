@@ -1,4 +1,4 @@
-exports.handler = function (context, event, callback) {
+const sendMessages = function (context, event) {
   const phoneNumbers = event.recipients.split(',').map((x) => x.trim());
   const { message, passcode } = event;
 
@@ -6,7 +6,7 @@ exports.handler = function (context, event, callback) {
     const response = new Twilio.Response();
     response.setStatusCode(401);
     response.setBody('Invalid passcode');
-    return callback(null, response);
+    return response;
   }
 
   const client = context.getTwilioClient();
@@ -25,12 +25,12 @@ exports.handler = function (context, event, callback) {
       });
   });
 
-  Promise.all(allMessageRequests)
+  return Promise.all(allMessageRequests)
     .then((result) => {
-      return callback(null, { result });
+      return { result };
     })
     .catch((err) => {
       console.error(err);
-      return callback('Failed to fetch messages');
+      return { error: 'Failed to fetch messages' };
     });
 };
